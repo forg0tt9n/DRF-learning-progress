@@ -9,7 +9,7 @@ class Women(models.Model):
     time_update = models.DateTimeField(auto_now=True)
     is_published = models.BooleanField(default=False)
     cat = models.ForeignKey('Category', on_delete=models.PROTECT, null=True)
-    user = models.ForeignKey(User, verbose_name='Пользователь', on_delete=models.CASCADE)
+    user = models.ForeignKey(User, verbose_name='Пользователь', on_delete=models.CASCADE, default=1)
 
     def __str__(self):
         return self.title
